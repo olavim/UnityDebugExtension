@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Extern href="VSDbgCmd.h"/>
+  <Extern href="VsDebugGuids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Include href="VSGlobals.vsct"/>
+
+  <Commands package="guidUnityDebugExtensionCmdSet">
+    <Groups>
+      <Group guid="guidUnityDebugExtensionCmdSet" id="MyMenuGroup" priority="0x0100">
+        <Parent guid="guidVSDebugGroup" id="IDM_DEBUG_MENU"/>
+      </Group>
+    </Groups>
+
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <Button guid="guidUnityDebugExtensionCmdSet" id="cmdidRunCmdAndAttach" priority="0x0800" type="Button">
+        <Parent guid="guidVSDebugGroup" id="IDG_EXECUTION" />
+        <Icon guid="ImageCatalogGuid" id="MethodPublic" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Run Command and Attach Unity Debugger</ButtonText>
+          <LocCanonicalName>.Debug.RunCommandAndAttachUnityDebugger</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidUnityDebugExtensionCmdSet" value="{5d244280-614e-400f-99f3-8301c151faed}">
+      <IDSymbol name="MyMenuGroup" value="0x0001" />
+      <IDSymbol name="cmdidRunCmdAndAttach" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
